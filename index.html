@@ -5,30 +5,36 @@
 		<link rel="stylesheet" href="normalize.css">
 		<link rel="stylesheet" href="styles.css">
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:600,800" rel="stylesheet">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 	</head>
 	<body>
 		<section class="entry-fields">
-			<h1>FOTO FINDER</h1>
-			<label for="title-input">Title
-				<input id="title-input" type="text">
-			</label>
-			<label for="caption-input">Caption
-				<input id="caption-input" type="text">
-			</label>
-			<button id="choose-file-btn" type="button">Choose File</button>
-			<button id="save-btn" type="button">Save</button>
+			<h1>FOTO <img src="photos/foto-finder-logo.svg" alt="redish color camera shaped foto finder logo" width="40"> FINDER</h1>
+			<section class="entry-detail">
+				<label for="title-input">Title
+					<input id="title-input" type="text">
+				</label>
+				<label for="caption-input">Caption
+					<input id="caption-input" type="text">
+				</label>
+				<button id="choose-file-btn" class="text-btn" type="button">Choose File</button>
+				<button id="save-btn" class="text-btn" type="button">Save</button>
+
+			</section>
 		</section>
 		<section class="display-fields">
 			<article class="item-box">
 				<h3>Title</h3>
-				<img src="photos/foat-real-feelings-sq.jpg" alt="photo of a white mountain goat" width="150px">
+				<img class="photos" src="photos/foat-real-feelings-sq.jpg" alt="photo of a white mountain goat" width="150px">
 				<h3>Cupcake ipsum dolor sit amet. Chupa chups pie carrot cake pie. Wafer candy icing candy chocolate bar.</h3>
-				<button id="garbage" type="button" name="garbage">
-					<img src="" alt="garbage can icon">
-				</button>
-				<button id="love-it-btn" type="button" name="love">
-					<img src="" alt="heart icon">
-				</button>
+				<div class="rating-btns">
+					<button id="garbage" type="button" name="garbage">
+						<img src="photos/delete.svg" alt="sweet garbage can icon" width="40">
+					</button>
+					<button id="love-it-btn" type="button" name="love">
+						<img src="photos/favorite.svg" alt="heart icon" width="40">
+					</button>
+				</div>
 			</article>
 		</section>
 

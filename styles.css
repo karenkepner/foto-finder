@@ -1,6 +1,81 @@
 body {
 	box-sizing: border-box;
 	font-family: 'Open Sans', sans-serif;
+}
+
+.entry-fields {
+	padding: 5px;
 	color: #FFF;
 	background-color: #3E2A35;
+}
+
+.entry-detail {
+	display: block;
+	margin: 0 auto;
+	width: 80%;
+}
+
+h1 {
+	text-align: center;
+}
+
+input {
+	display: block;
+	width: 90%;
+	/*margin: 0;*/
+	padding: 10px;
+	border-style: none;
+}
+
+ label {
+	margin: 10px 0;
+ }
+
+button {
+	border: none;
+	margin: 10px 0;
+	padding: 10px;
+}
+
+.text-btn {
+	width: 35%;
+	color: #FFF;
+	background-color: #5B4447;
+}
+
+.text-btn:hover {
+	background-color: #938284;
+}
+
+#save-btn {
+	float: right;
+}
+
+/*style display fields*/
+.display-fields {
+	background-color: #C2B2B4;
+	padding: 10px;
+}
+
+.item-box {
+	padding-top: 5px;
+	background-color: #FFF;
+}
+
+.item-box h3 {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.photos {
+	width: 100%;
+}
+
+.rating-btns {
+	background-color: #5B4447;
+	padding: 5px 10px;
+}
+
+#love-it-btn {
+	float: right;
 }
