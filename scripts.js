@@ -1,4 +1,3 @@
-var karen = 'kep';
 
 //on click of the choose file btn/input:
 //  * have user select the file
@@ -9,6 +8,30 @@ var karen = 'kep';
 
 //where will the photo be from? just the photos directory?
 //allow fotos from anywhere.
+
+$('#save-btn').on('click', function() {
+	console.log('save button clicked');
+	var $title = $('#title-input').val();
+	var $caption = $('#caption-input').val();
+	console.log('title: ' + $title);
+	console.log('caption: ' + $caption);
+	$('.display-fields').prepend()
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*
