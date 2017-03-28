@@ -11,16 +11,15 @@
 		<section class="entry-fields">
 			<h1>FOTO <img src="photos/foto-finder-logo.svg" alt="redish color camera shaped foto finder logo" width="40"> FINDER</h1>
 			<section class="entry-detail">
-				<label for="title-input">Title
-					<input id="title-input" type="text">
-				</label>
-				<label for="caption-input">Caption
-					<input id="caption-input" type="text">
-				</label>
-				<button id="choose-file-btn" class="text-btn" type="button">Choose File</button>
-				<input type="file" >
-				<button id="save-btn" class="text-btn" type="button">Save</button>
+				<label for="title-input">Title</label>
+				<input id="title-input" type="text">
+				<label for="caption-input">Caption</label>
+				<input id="caption-input" type="text">
 
+				<input id="choose-file-btn" class="input-file text-btn" type="file" name="file" data-multiple-caption="{count} files selected" multiple>
+				<label for="choose-file-btn" class="text-btn"><span>Choose File</span></label>
+
+				<button id="save-btn" class="text-btn" type="button">Save</button>
 			</section>
 		</section>
 		<section class="display-fields">
