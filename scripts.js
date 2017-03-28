@@ -15,7 +15,19 @@ $('#save-btn').on('click', function() {
 	var $caption = $('#caption-input').val();
 	console.log('title: ' + $title);
 	console.log('caption: ' + $caption);
-	$('.display-fields').prepend()
+	var $fotoFileFake = $('.input-file').val();
+	var $fotoFile = $fotoFileFake.replace(/^.*\\/, "");
+	console.log("the fotoFile: " + $fotoFile);
+	$('.display-fields').prepend(`
+		<article class="item-box">
+		<h3>${$title}</h3>
+		<img class="photos" src="photos/${$fotoFile}" alt="${$title + " " +$caption}" width="150px">
+		<h3>${$caption}</h3>
+		<div class="rating-btns">
+			<button id="garbage-btn" class="item-btn" type="button" name="garbage"></button>
+			<button id="love-it-btn" class="item-btn" type="button" name="love"></button>
+		</div>
+	</article>`)
 })
 
 
