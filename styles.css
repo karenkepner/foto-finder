@@ -108,6 +108,26 @@ button {
 	padding: 5px 10px;
 }
 
+.item-btn {
+	width: 60px;
+	height: 60px;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+#garbage-btn {
+	background-image: url(photos/delete.svg);
+}
+
+#garbage-btn:hover {
+	background-image: url(photos/delete-active.svg);
+}
+
 #love-it-btn {
 	float: right;
+	background-image: url(photos/favorite.svg);
+}
+
+#love-it-btn:hover {
+	background-image: url(photos/favorite-active.svg);
 }
