@@ -1,4 +1,3 @@
-var karen = 'kep';
 
 //on click of the choose file btn/input:
 //  * have user select the file
@@ -9,6 +8,42 @@ var karen = 'kep';
 
 //where will the photo be from? just the photos directory?
 //allow fotos from anywhere.
+
+$('#save-btn').on('click', function() {
+	console.log('save button clicked');
+	var $title = $('#title-input').val();
+	var $caption = $('#caption-input').val();
+	console.log('title: ' + $title);
+	console.log('caption: ' + $caption);
+	var $fotoFileFake = $('.input-file').val();
+	var $fotoFile = $fotoFileFake.replace(/^.*\\/, "");
+	console.log("the fotoFile: " + $fotoFile);
+	$('.display-fields').prepend(`
+		<article class="item-box">
+		<h3>${$title}</h3>
+		<img class="photos" src="photos/${$fotoFile}" alt="${$title + " " +$caption}" width="150px">
+		<h3>${$caption}</h3>
+		<div class="rating-btns">
+			<button id="garbage-btn" class="item-btn" type="button" name="garbage"></button>
+			<button id="love-it-btn" class="item-btn" type="button" name="love"></button>
+		</div>
+	</article>`)
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*
