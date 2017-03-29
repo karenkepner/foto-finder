@@ -6,16 +6,19 @@ function Item(title, caption, fileName){
 
 function checkForFullFields() {
 	if($('#title-input').val() === '' || $('#caption-input').val() === "" || $('.input-file').val() === '') {
-		alert('Please supply required information for each field.');
-	}
+		$('#save-btn').prop('disabled',true);
+		} else {
+			$('#save-btn').prop('disabled', false);
+			return true;
+		}
 }
 
 function prependDisplayField(newObject){
 	$('.display-fields').prepend(`
 		<article class="item-box">
-		<h3>${newObject.title}</h3>
-		<img class="photos" src="photos/${newObject.fileName}" alt="${newObject.title + " " +newObject.caption}" width="150px">
-		<h3>${newObject.caption}</h3>
+		<h3 contenteditable>${newObject.title}</h3>
+		<img class="photos" src="photos/${newObject.fileName}" alt="${newObject.title + " " +newObject.caption}" height="250px">
+		<h3 contenteditable>${newObject.caption}</h3>
 		<div class="rating-btns">
 		<button id="garbage-btn" class="item-btn" type="button" name="garbage"></button>
 		<button id="love-it-btn" class="item-btn" type="button" name="love"></button>
@@ -31,14 +34,19 @@ function clearInputFields() {
 	$('.directions').text('');
 }
 
-$('#save-btn').on('click', function() {
+$('.entry-fields').on('keyup mouseover', function() {
 	checkForFullFields();
-	var title = $('#title-input').val();
-	var caption = $('#caption-input').val();
-	var fotoFileFake = $('.input-file').val();
-	var fileName = fotoFileFake.replace(/^.*\\/, "");
-	var newObject = new Item(title, caption, fileName)
-	prependDisplayField(newObject);
+})
+
+$('#save-btn').on('click', function() {
+	if (checkForFullFields() === true) {
+		var title = $('#title-input').val();
+		var caption = $('#caption-input').val();
+		var fotoFileFake = $('.input-file').val();
+		var fileName = fotoFileFake.replace(/^.*\\/, "");
+		var newObject = new Item(title, caption, fileName)
+		prependDisplayField(newObject);
+	};
 	clearInputFields();
 });
 
@@ -62,7 +70,7 @@ $('.display-fields').on('click', '#love-it-btn', function() {
 
 ;( function( $, window, document, undefined )
 {
-	$( '.input-file' ).each( function()
+	$('.input-file').each( function()
 	{
 		var $input	 = $( this ),
 			$label	 = $input.next( 'label' ),

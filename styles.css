@@ -1,5 +1,8 @@
-body {
+* {
 	box-sizing: border-box;
+}
+
+body {
 	font-family: 'Open Sans', sans-serif;
 	width: 100%;
 	background-color: #C2B2B4;
@@ -14,8 +17,13 @@ body {
 .entry-detail {
 	display: block;
 	margin: 0 auto;
+	padding: 1px;
 	max-width: 500px;
 	width: 95%;
+}
+
+.entry-btns {
+	width: 100%;
 }
 
 h1 {
@@ -24,8 +32,9 @@ h1 {
 
 input {
 	display: block;
-	width: 94%;
-	margin: 5px 0 10px;
+	box-sizing: border-box;
+	width: 100%;
+	margin: 5px auto 10px;
 	padding: 10px;
 	border-style: none;
 }
@@ -52,6 +61,10 @@ button {
 
 #save-btn {
 	float: right;
+}
+
+#save-btn[disabled] {
+	background-color: #938284;
 }
 
 .directions {
@@ -95,7 +108,6 @@ button {
 /*style display fields*/
 .display-fields {
 	display: inline-block;
-	/*text-align: center;*/
 	background-color: #C2B2B4;
 	width: 100%;
 	padding: 15px 0;
@@ -117,6 +129,7 @@ button {
 
 .photos {
 	width: 100%;
+	max-width: 300px;
 }
 
 .rating-btns {
@@ -154,13 +167,14 @@ button {
 
 .love-it {
 	background-color: #E26D5A;
-	background-image: url(photos/favorite-active.svg);
+	/*background-image: url(photos/favorite-active.svg);*/
 }
 
 @media screen and (min-width: 670px) {
 
 	.item-box {
 		display: inline-block;
+		vertical-align: top;
 		margin: 15px;
 		width: 250px;
 	}
