@@ -16,6 +16,7 @@ $('#save-btn').on('click', function() {
 	console.log('title: ' + $title);
 	console.log('caption: ' + $caption);
 	var $fotoFileFake = $('.input-file').val();
+	console.log('filenamepath: '+$fotoFileFake);
 	var $fotoFile = $fotoFileFake.replace(/^.*\\/, "");
 	console.log("the fotoFile: " + $fotoFile);
 	$('.display-fields').prepend(`
@@ -33,8 +34,13 @@ $('#save-btn').on('click', function() {
 
 $('.display-fields').on('click', '#garbage-btn', function() {
 	console.log('garbage-btn clicked');
-	$('.item-box').closest().remove();
+	$(this).closest('.item-box').remove();
 })
+
+$('.display-fields').on('click', '#love-it-btn', function() {
+	console.log('love-btn clicked');
+	$(this).closest('.item-box').toggleClass('love-it');
+});
 
 
 
