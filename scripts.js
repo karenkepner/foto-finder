@@ -8,27 +8,39 @@
 
 //where will the photo be from? just the photos directory?
 //allow fotos from anywhere.
+function Item(title, caption, fileName){
+	this.title = title;
+	this.caption = caption;
+	this.fileName = fileName;
+}
 
-$('#save-btn').on('click', function() {
-	console.log('save button clicked');
-	var $title = $('#title-input').val();
-	var $caption = $('#caption-input').val();
-	console.log('title: ' + $title);
-	console.log('caption: ' + $caption);
-	var $fotoFileFake = $('.input-file').val();
-	console.log('filenamepath: '+$fotoFileFake);
-	var $fotoFile = $fotoFileFake.replace(/^.*\\/, "");
-	console.log("the fotoFile: " + $fotoFile);
+function checkForFullFields() {
+	if($('#title-input').val() === '' || $('#caption-input').val() === "" || $('.input-file').val() === '') {
+		return alert('Please supply required information for each field.');
+	}
+}
+
+function prependDisplayField(newObject){
 	$('.display-fields').prepend(`
 		<article class="item-box">
-		<h3>${$title}</h3>
-		<img class="photos" src="photos/${$fotoFile}" alt="${$title + " " +$caption}" width="150px">
-		<h3>${$caption}</h3>
+		<h3>${newObject.title}</h3>
+		<img class="photos" src="photos/${newObject.fileName}" alt="${newObject.title + " " +newObject.caption}" width="150px">
+		<h3>${newObject.caption}</h3>
 		<div class="rating-btns">
-			<button id="garbage-btn" class="item-btn" type="button" name="garbage"></button>
-			<button id="love-it-btn" class="item-btn" type="button" name="love"></button>
+		<button id="garbage-btn" class="item-btn" type="button" name="garbage"></button>
+		<button id="love-it-btn" class="item-btn" type="button" name="love"></button>
 		</div>
-	</article>`);
+		</article>`);
+}
+
+$('#save-btn').on('click', function() {
+	checkForFullFields();
+	var title = $('#title-input').val();
+	var caption = $('#caption-input').val();
+	var fotoFileFake = $('.input-file').val();
+	var fileName = fotoFileFake.replace(/^.*\\/, "");
+	var newObject = new Item(title, caption, fileName)
+	prependDisplayField(newObject);
 	$('.directions').text('');
 });
 
