@@ -2,6 +2,7 @@ body {
 	box-sizing: border-box;
 	font-family: 'Open Sans', sans-serif;
 	width: 100%;
+	background-color: #C2B2B4;
 }
 
 .entry-fields {
@@ -52,6 +53,12 @@ button {
 #save-btn {
 	float: right;
 }
+
+.directions {
+	text-align: center;
+	margin: 10px;
+}
+
 /*style the choose fle input*/
 .input-file {
 	width: 0.1px;
@@ -87,9 +94,12 @@ button {
 
 /*style display fields*/
 .display-fields {
+	display: inline-block;
+	/*text-align: center;*/
 	background-color: #C2B2B4;
 	width: 100%;
 	padding: 15px 0;
+	margin: 0 auto;
 }
 
 .item-box {
@@ -115,8 +125,8 @@ button {
 }
 
 .item-btn {
-	width: 60px;
-	height: 60px;
+	width: 40px;
+	height: 40px;
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-color: transparent;
@@ -136,17 +146,22 @@ button {
 	background-image: url(photos/favorite.svg);
 }
 
-#love-it-btn:hover {
+#love-it-btn:hover,
+#love-it-btn:focus,
+#love-it-btn:active {
+	background-image: url(photos/favorite-active.svg);
+}
+
+.love-it {
+	background-color: #E26D5A;
 	background-image: url(photos/favorite-active.svg);
 }
 
 @media screen and (min-width: 670px) {
-	body {
-		background-color: limegreen;
-	}
 
 	.item-box {
 		display: inline-block;
 		margin: 15px;
+		width: 250px;
 	}
 }

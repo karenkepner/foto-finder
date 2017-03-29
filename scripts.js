@@ -1,54 +1,55 @@
+function Item(title, caption, fileName){
+	this.title = title;
+	this.caption = caption;
+	this.fileName = fileName;
+}
 
-//on click of the choose file btn/input:
-//  * have user select the file
-//  * collect the title and caption of the file
-//  * append the new 'item-box' with the photo,title,caption
-//  * if they haven't entered a title and caption, ask for it here
-//  * resize the photo so it fits and loads quickly
+function checkForFullFields() {
+	if($('#title-input').val() === '' || $('#caption-input').val() === "" || $('.input-file').val() === '') {
+		alert('Please supply required information for each field.');
+	}
+}
 
-//where will the photo be from? just the photos directory?
-//allow fotos from anywhere.
-
-$('#save-btn').on('click', function() {
-	console.log('save button clicked');
-	var $title = $('#title-input').val();
-	var $caption = $('#caption-input').val();
-	console.log('title: ' + $title);
-	console.log('caption: ' + $caption);
-	var $fotoFileFake = $('.input-file').val();
-	var $fotoFile = $fotoFileFake.replace(/^.*\\/, "");
-	console.log("the fotoFile: " + $fotoFile);
+function prependDisplayField(newObject){
 	$('.display-fields').prepend(`
 		<article class="item-box">
-		<h3>${$title}</h3>
-		<img class="photos" src="photos/${$fotoFile}" alt="${$title + " " +$caption}" width="150px">
-		<h3>${$caption}</h3>
+		<h3>${newObject.title}</h3>
+		<img class="photos" src="photos/${newObject.fileName}" alt="${newObject.title + " " +newObject.caption}" width="150px">
+		<h3>${newObject.caption}</h3>
 		<div class="rating-btns">
-			<button id="garbage-btn" class="item-btn" type="button" name="garbage"></button>
-			<button id="love-it-btn" class="item-btn" type="button" name="love"></button>
+		<button id="garbage-btn" class="item-btn" type="button" name="garbage"></button>
+		<button id="love-it-btn" class="item-btn" type="button" name="love"></button>
 		</div>
-	</article>`);
+		</article>`);
+}
+
+function clearInputFields() {
+	$('#title-input').val('');
+	$('#caption-input').val('');
+	$('.input-file').val('');
+	$('span').text('Choose File');
 	$('.directions').text('');
+}
+
+$('#save-btn').on('click', function() {
+	checkForFullFields();
+	var title = $('#title-input').val();
+	var caption = $('#caption-input').val();
+	var fotoFileFake = $('.input-file').val();
+	var fileName = fotoFileFake.replace(/^.*\\/, "");
+	var newObject = new Item(title, caption, fileName)
+	prependDisplayField(newObject);
+	clearInputFields();
 });
 
 $('.display-fields').on('click', '#garbage-btn', function() {
-	console.log('garbage-btn clicked');
-	$('.item-box').closest().remove();
+	$(this).closest('.item-box').remove();
 })
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+$('.display-fields').on('click', '#love-it-btn', function() {
+	$(this).closest('.item-box').toggleClass('love-it');
+	$(this).closest('#love-it-btn').css('background-image', 'url(photos/favorite-active.svg)')
+});
 
 
 
