@@ -43,7 +43,6 @@ $('#save-btn').on('click', function() {
 });
 
 $('.display-fields').on('click', '#garbage-btn', function() {
-	console.log('garbage-btn clicked');
 	$(this).closest('.item-box').remove();
 })
 
@@ -51,20 +50,6 @@ $('.display-fields').on('click', '#love-it-btn', function() {
 	$(this).closest('.item-box').toggleClass('love-it');
 	$(this).closest('#love-it-btn').css('background-image', 'url(photos/favorite-active.svg)')
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
