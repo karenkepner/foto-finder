@@ -7,6 +7,8 @@ function Item(title, caption, fileName){
 function checkForFullFields() {
 	if($('#title-input').val() === '' || $('#caption-input').val() === "" || $('.input-file').val() === '') {
 		alert('Please supply required information for each field.');
+	} else {
+		return true;
 	}
 }
 
@@ -32,13 +34,14 @@ function clearInputFields() {
 }
 
 $('#save-btn').on('click', function() {
-	checkForFullFields();
-	var title = $('#title-input').val();
-	var caption = $('#caption-input').val();
-	var fotoFileFake = $('.input-file').val();
-	var fileName = fotoFileFake.replace(/^.*\\/, "");
-	var newObject = new Item(title, caption, fileName)
-	prependDisplayField(newObject);
+	if (checkForFullFields() === true) {
+		var title = $('#title-input').val();
+		var caption = $('#caption-input').val();
+		var fotoFileFake = $('.input-file').val();
+		var fileName = fotoFileFake.replace(/^.*\\/, "");
+		var newObject = new Item(title, caption, fileName)
+		prependDisplayField(newObject);
+	};
 	clearInputFields();
 });
 
