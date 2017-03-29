@@ -154,7 +154,7 @@ button {
 
 .love-it {
 	background-color: #E26D5A;
-	background-image: url(photos/favorite-active.svg);
+	/*background-image: url(photos/favorite-active.svg);*/
 }
 
 @media screen and (min-width: 670px) {
