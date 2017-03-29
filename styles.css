@@ -94,9 +94,12 @@ button {
 
 /*style display fields*/
 .display-fields {
+	display: inline-block;
+	/*text-align: center;*/
 	background-color: #C2B2B4;
 	width: 100%;
 	padding: 15px 0;
+	margin: 0 auto;
 }
 
 .item-box {
@@ -144,12 +147,14 @@ button {
 }
 
 #love-it-btn:hover,
-#love-it-btn:focus {
+#love-it-btn:focus,
+#love-it-btn:active {
 	background-image: url(photos/favorite-active.svg);
 }
 
 .love-it {
 	background-color: #E26D5A;
+	background-image: url(photos/favorite-active.svg);
 }
 
 @media screen and (min-width: 670px) {

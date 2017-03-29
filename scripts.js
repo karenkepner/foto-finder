@@ -50,8 +50,8 @@ $('.display-fields').on('click', '#garbage-btn', function() {
 })
 
 $('.display-fields').on('click', '#love-it-btn', function() {
-	console.log('love-btn clicked');
 	$(this).closest('.item-box').toggleClass('love-it');
+	$(this).closest('#love-it-btn').css('background-image', 'url(photos/favorite-active.svg)')
 });
 
 
