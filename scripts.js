@@ -1,13 +1,3 @@
-
-//on click of the choose file btn/input:
-//  * have user select the file
-//  * collect the title and caption of the file
-//  * append the new 'item-box' with the photo,title,caption
-//  * if they haven't entered a title and caption, ask for it here
-//  * resize the photo so it fits and loads quickly
-
-//where will the photo be from? just the photos directory?
-//allow fotos from anywhere.
 function Item(title, caption, fileName){
 	this.title = title;
 	this.caption = caption;
@@ -16,7 +6,7 @@ function Item(title, caption, fileName){
 
 function checkForFullFields() {
 	if($('#title-input').val() === '' || $('#caption-input').val() === "" || $('.input-file').val() === '') {
-		return alert('Please supply required information for each field.');
+		alert('Please supply required information for each field.');
 	}
 }
 
@@ -33,6 +23,14 @@ function prependDisplayField(newObject){
 		</article>`);
 }
 
+function clearInputFields() {
+	$('#title-input').val('');
+	$('#caption-input').val('');
+	$('.input-file').val('');
+	$('span').text('Choose File');
+	$('.directions').text('');
+}
+
 $('#save-btn').on('click', function() {
 	checkForFullFields();
 	var title = $('#title-input').val();
@@ -41,7 +39,7 @@ $('#save-btn').on('click', function() {
 	var fileName = fotoFileFake.replace(/^.*\\/, "");
 	var newObject = new Item(title, caption, fileName)
 	prependDisplayField(newObject);
-	$('.directions').text('');
+	clearInputFields();
 });
 
 $('.display-fields').on('click', '#garbage-btn', function() {
