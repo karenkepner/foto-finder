@@ -27,7 +27,13 @@ $('#save-btn').on('click', function() {
 			<button id="garbage-btn" class="item-btn" type="button" name="garbage"></button>
 			<button id="love-it-btn" class="item-btn" type="button" name="love"></button>
 		</div>
-	</article>`)
+	</article>`);
+	$('.directions').text('');
+});
+
+$('.display-fields').on('click', '#garbage-btn', function() {
+	console.log('garbage-btn clicked');
+	$('.item-box').closest().remove();
 })
 
 
