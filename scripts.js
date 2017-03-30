@@ -17,7 +17,7 @@ function prependDisplayField(newObject){
 	$('.display-fields').prepend(`
 		<article class="item-box">
 		<h3 contenteditable>${newObject.title}</h3>
-		<img class="photos" src="photos/${newObject.fileName}" alt="${newObject.title + " " +newObject.caption}" height="250px">
+		<img class="photos" src="photos/${newObject.fileName}" alt="${newObject.title + " " +newObject.caption}" width="350px">
 		<h3 contenteditable>${newObject.caption}</h3>
 		<div class="rating-btns">
 		<button id="garbage-btn" class="item-btn" type="button" name="garbage"></button>
@@ -68,27 +68,23 @@ $('.display-fields').on('click', '#love-it-btn', function() {
 
 'use strict';
 
-;( function( $, window, document, undefined )
-{
-	$('.input-file').each( function()
-	{
+;( function( $, window, document, undefined ) {
+	$('.input-file').each( function() {
 		var $input	 = $( this ),
-			$label	 = $input.next( 'label' ),
-			labelVal = $label.html();
+			  $label	 = $input.next( 'label' ),
+			  labelVal = $label.html();
 
-		$input.on( 'change', function( e )
-		{
+		$input.on('change', function(e) {
 			var fileName = '';
-
 			if( this.files && this.files.length > 1 )
-				fileName = ( this.getAttribute( 'data-multiple-caption' ) || '' ).replace( '{count}', this.files.length );
+				fileName = ( this.getAttribute('data-multiple-caption') || '' ).replace('{count}', this.files.length);
 			else if( e.target.value )
 				fileName = e.target.value.split( '\\' ).pop();
 
-			if( fileName )
-				$label.find( 'span' ).html( fileName );
+			if(fileName)
+				$label.find('span').html(fileName);
 			else
-				$label.html( labelVal );
+				$label.html(labelVal);
 		});
 
 		// Firefox bug fix
