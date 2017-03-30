@@ -16,19 +16,15 @@ function checkForFullFields() {
 function prependDisplayField(newObject){
 	$('.display-fields').prepend(`
 		<article class="item-box">
-		<h3 contenteditable>${newObject.title}</h3>
-		<img class="photos" src="photos/${newObject.fileName}" alt="${newObject.title + " " +newObject.caption}" width="350px">
-		<h3 contenteditable>${newObject.caption}</h3>
-		<div class="rating-btns">
-		<button id="garbage-btn" class="item-btn" type="button" name="garbage"></button>
-		<button id="love-it-btn" class="item-btn" type="button" name="love"></button>
-		</div>
+			<h3 contenteditable>${newObject.title}</h3>
+			<img class="photos" src="photos/${newObject.fileName}" alt="${newObject.title + " " +newObject.caption}" width="350px">
+			<h3 contenteditable>${newObject.caption}</h3>
+			<div class="rating-btns">
+				<button id="garbage-btn" class="item-btn" type="button" name="garbage"></button>
+				<button class="love-it-btn item-btn" type="button" name="love"></button>
+			</div>
 		</article>`);
 }
-
-// function sortFavoritesToTop() {
-// 	$('.display-fields').forEach('.item-box').hasClass('.love-it').prepend()
-// }
 
 function clearInputFields() {
 	$('#title-input').val('');
@@ -38,7 +34,7 @@ function clearInputFields() {
 	$('.directions').text('');
 }
 
-$('.entry-fields').on('keyup mouseover', function() {
+$('.entry-fields').on('keyup change', function() {
 	checkForFullFields();
 })
 
@@ -55,10 +51,11 @@ $('#save-btn').on('click', function() {
 });
 
 $('.display-fields').on('click', '#garbage-btn', function() {
-	$(this).closest('.item-box').remove();
+	$(this).closest('.item-box').fadeOut('slow');
 })
 
-$('.display-fields').on('click', '#love-it-btn', function() {
+$('.display-fields').on('click', '.love-it-btn', function() {
 	$(this).closest('.item-box').toggleClass('love-it');
-	$(this).closest('#love-it-btn').css('background-image', 'url(photos/favorite-active.svg)')
+	$(this).closest('.love-it-btn').toggleClass('love-btn-toggle');
+
 });
