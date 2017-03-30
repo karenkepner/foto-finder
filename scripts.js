@@ -26,6 +26,10 @@ function prependDisplayField(newObject){
 		</article>`);
 }
 
+// function sortFavoritesToTop() {
+// 	$('.display-fields').forEach('.item-box').hasClass('.love-it').prepend()
+// }
+
 function clearInputFields() {
 	$('#title-input').val('');
 	$('#caption-input').val('');
