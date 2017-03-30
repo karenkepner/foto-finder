@@ -3,8 +3,8 @@
 }
 
 body {
-	font-family: 'Open Sans', sans-serif;
 	width: 100%;
+	font-family: 'Open Sans', sans-serif;
 	background-color: #C2B2B4;
 }
 
@@ -16,10 +16,10 @@ body {
 
 .entry-detail {
 	display: block;
+	width: 95%;
+	max-width: 500px;
 	margin: 0 auto;
 	padding: 1px;
-	max-width: 500px;
-	width: 95%;
 }
 
 .entry-btns {
@@ -41,6 +41,7 @@ input {
 
 label {
 	margin: 10px 0;
+	color: #938284;
 }
 
 button {
@@ -68,14 +69,14 @@ button {
 }
 
 .directions {
-	text-align: center;
 	margin: 10px;
+	text-align: center;
 }
 
 /*style the choose fle input*/
 .input-file {
-	width: 0.1px;
 	height: 0.1px;
+	width: 0.1px;
 	opacity: 0;
 	overflow: hidden;
 	position: absolute;
@@ -83,12 +84,12 @@ button {
 }
 
 .input-file + label {
-		cursor: pointer;
-		padding: 10px;
-		text-align: center;
-    color: #FFF;
-    background-color: #5B4447;
-    display: inline-block;
+	display: inline-block;
+	text-align: center;
+	padding: 10px;
+  color: #FFF;
+  background-color: #5B4447;
+	cursor: pointer;
 }
 
 .input-file:focus + label,
@@ -108,38 +109,41 @@ button {
 /*style display fields*/
 .display-fields {
 	display: inline-block;
-	background-color: #C2B2B4;
 	width: 100%;
-	padding: 15px 0;
 	margin: 0 auto;
+	padding: 15px 0;
+	background-color: #C2B2B4;
 }
 
 .item-box {
 	max-width: 350px;
+	width: 330px;
 	width: 90%;
-	padding-top: 5px;
 	margin: 15px auto;
+	padding-top: 5px;
+	border: 2px solid #938284;
 	background-color: #FFF;
 }
 
 .item-box h3 {
 	padding-left: 10px;
 	padding-right: 10px;
+	color: #3E2A35;
 }
 
 .photos {
 	width: 100%;
-	max-width: 300px;
+	max-width: 400px;
 }
 
 .rating-btns {
-	background-color: #5B4447;
 	padding: 5px 10px;
+	background-color: #5B4447;
 }
 
 .item-btn {
-	width: 40px;
 	height: 40px;
+	width: 40px;
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-color: transparent;
@@ -167,15 +171,33 @@ button {
 
 .love-it {
 	background-color: #E26D5A;
-	/*background-image: url(photos/favorite-active.svg);*/
 }
 
-@media screen and (min-width: 670px) {
+@media screen and (min-width: 330px) {
+
+	.item-box {
+		display: block;
+		margin: 15px auto;
+		width: 90%;
+	}
+}
+
+@media screen and (min-width: 545px) {
 
 	.item-box {
 		display: inline-block;
-		vertical-align: top;
 		margin: 15px;
-		width: 250px;
+		max-width: 250px;
+		vertical-align: top;
 	}
+
+	h1 {
+		margin: 15px;
+		font-size: 60px;
+	}
+
+	h1 img {
+		width: 75px;
+	}
+
 }
