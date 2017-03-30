@@ -158,19 +158,21 @@ button {
 	background-image: url(photos/delete-active.svg);
 }
 
-#love-it-btn {
+.love-it-btn {
 	float: right;
 	background-image: url(photos/favorite.svg);
 }
 
-#love-it-btn:hover,
-#love-it-btn:focus,
-#love-it-btn:active {
+/*.love-it-btn:hover {
 	background-image: url(photos/favorite-active.svg);
-}
+}*/
 
 .love-it {
 	background-color: #E26D5A;
+}
+
+.love-btn-toggle {
+	background-image: url(photos/favorite-active.svg);
 }
 
 @media screen and (min-width: 330px) {
